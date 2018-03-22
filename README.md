@@ -2,7 +2,9 @@
 A simple vue component generator using `make:v-component` artisan command in Laravel.
 
 ## Installation
-Soon...
+```
+composer require verzatiletom/vcomponent
+```
 
 ## Usage
 ```
