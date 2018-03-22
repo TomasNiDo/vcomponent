@@ -1,6 +1,6 @@
 {
     "name": "verzatiletom/vcomponent",
-    "description": "A vue component generator using make:v-component command.",
+    "description": "A simple vue component generator using make:v-component artisan command in Laravel.",
     "type": "laravel",
     "license": "MIT",
     "authors": [

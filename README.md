@@ -1,8 +1,8 @@
 # Laravel 5+ Vue Component Generator
-A simple vue component generator using make:v-component command in Laravel.
+A simple vue component generator using `make:v-component` artisan command in Laravel.
 
 ## Installation
-[insert installation instruction here]
+Soon...
 
 ## Usage
 ```
