@@ -6,7 +6,7 @@ A simple vue component generator using `make:v-component` artisan command in Lar
 composer require verzatiletom/vcomponent
 ```
 
-For Laravel 5.4  and below, paste this to your `app.php` inside your `providers` array.
+For Laravel 5.4  and below, paste this to your `config/app.php` inside your `providers` array.
 ```php
 Verzatiletom\Vcomponent\VcomponentServiceProvider::class
 ```
