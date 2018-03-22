@@ -11,7 +11,7 @@ composer require verzatiletom/vcomponent
 php artisan make:v-component {name} {--dir}
 ```
 
-## Example
+### Example
 ```
 php artisan make:v-component ExampleComponent
 ```
