@@ -18,17 +18,12 @@ php artisan make:v-component {name} {--dir}
 
 ### Example
 ```
-php artisan make:v-component ExampleComponent
+php artisan make:v-component DemoComponent
 ```
-It will generate a `ExampleComponent.vue` in the `resources/assets/js` directory by default.
+It will generate a `DemoComponent.vue`  file in the `resources/assets/js` directory by default.
 
 ### Specify the location
 ```
-php artisan make:v-component ExampleComponent --dir assets/js/components
+php artisan make:v-component DemoComponent --dir assets/js/components
 ```
 By specifying the `--dir` option, it will generate your `.vue` file on the your specified directory.
-
-## Available Options
-| Option | Default   | Description                                                        |
-|--------|-----------|--------------------------------------------------------------------|
-| dir    | assets/js | The resource directory where you want to the file to be generated. |
