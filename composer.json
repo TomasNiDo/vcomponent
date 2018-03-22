@@ -3,6 +3,7 @@
     "description": "A simple vue component generator using make:v-component artisan command in Laravel.",
     "type": "laravel",
     "license": "MIT",
+    "keywords": ["laravel", "vue", "vue-component", "generator"],
     "authors": [
         {
             "name": "Thomas John Gulisao",
@@ -11,11 +12,20 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "laravel/framework": ">=5.4.0"
+        "php": "^7.0",
+        "illuminate/support": "^5.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.0"
     },
     "autoload": {
         "psr-4": {
             "Verzatiletom\\Vcomponent\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
         }
     },
     "extra": {

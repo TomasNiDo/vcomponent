@@ -3,6 +3,7 @@
 namespace Verzatiletom\Vcomponent;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Config;
 
 class VcomponentServiceProvider extends ServiceProvider
 {
@@ -13,9 +14,18 @@ class VcomponentServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->commands([
-            Commands\CreateVueComponent::class
+        $this->loadViewsFrom(__DIR__ . '/assets', 'v-component');
+
+        Config::set('filesystems.disks.v-component', [
+            'driver' => 'local',
+            'root' => resource_path('assets')
         ]);
+
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                Commands\CreateVueComponent::class
+            ]);
+        }
     }
 
     /**

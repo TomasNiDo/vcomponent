@@ -4,6 +4,7 @@ namespace Verzatiletom\Vcomponent\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class CreateVueComponent extends Command
 {
@@ -14,7 +15,7 @@ class CreateVueComponent extends Command
      */
     protected $signature = 'make:v-component
         {name : The name of the component file}
-        {--dir=assets/js : The directory where the component should be generated}';
+        {--dir=js : The directory where the component should be generated}';
 
     /**
      * The console command description.
@@ -44,18 +45,23 @@ class CreateVueComponent extends Command
      */
     public function handle()
     {
-        $directory = resource_path($this->option('dir'));
-        $destination = resource_path($this->option('dir') . '/' . $this->argument('name') . '.vue');
+        $name = kebab_case($this->argument('name'));
+        $filename = $this->argument('name') . '.vue';
+        $directory = $this->option('dir');
+        $destination = $directory . '/' . $filename;
 
-        if (! file_exists($directory)) {
-            File::makeDirectory($directory, 0775, $recursive = true);
+        if (! Storage::disk('v-component')->exists($directory)) {
+            Storage::disk('v-component')->makeDirectory($directory);
         }
 
-        if (file_exists($destination)) {
+        if (Storage::disk('v-component')->exists($destination)) {
             return $this->error('File already exists!');
         }
 
-        $transfer = File::copy($this->file, $destination);
+        $transfer = Storage::disk('v-component')->put(
+            $destination,
+            view('v-component::vue-component', compact('name'))
+        );
 
         if (! $transfer) {
             return $this->error('Error generating vue component.');

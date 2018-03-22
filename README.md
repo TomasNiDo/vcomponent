@@ -24,6 +24,6 @@ It will generate a `DemoComponent.vue`  file in the `resources/assets/js` direct
 
 ### Specify the location
 ```
-php artisan make:v-component DemoComponent --dir assets/js/components
+php artisan make:v-component DemoComponent --dir js/components
 ```
 By specifying the `--dir` option, it will generate your `.vue` file on the your specified directory.
