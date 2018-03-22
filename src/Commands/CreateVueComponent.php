@@ -44,7 +44,12 @@ class CreateVueComponent extends Command
      */
     public function handle()
     {
+        $directory = resource_path($this->option('dir'));
         $destination = resource_path($this->option('dir') . '/' . $this->argument('name') . '.vue');
+
+        if (! file_exists($directory)) {
+            File::makeDirectory($directory, 0775);
+        }
 
         if (file_exists($destination)) {
             return $this->error('File already exists!');
