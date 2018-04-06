@@ -35,7 +35,7 @@ class CreateVueComponent extends Command
     {
         parent::__construct();
 
-        $this->file = dirname(__DIR__) . '/assets/VueComponent.vue';
+        $this->file = dirname(__DIR__).'/assets/VueComponent.vue';
     }
 
     /**
@@ -46,9 +46,9 @@ class CreateVueComponent extends Command
     public function handle()
     {
         $name = kebab_case($this->argument('name'));
-        $filename = $this->argument('name') . '.vue';
+        $filename = $this->argument('name').'.vue';
         $directory = $this->option('dir');
-        $destination = $directory . '/' . $filename;
+        $destination = $directory.'/'.$filename;
 
         if (! Storage::disk('v-component')->exists($directory)) {
             Storage::disk('v-component')->makeDirectory($directory);
