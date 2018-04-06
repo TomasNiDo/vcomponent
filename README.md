@@ -1,4 +1,4 @@
-# Laravel 5+ Vue Component Generator [![Latest Stable Version](https://poser.pugx.org/verzatiletom/vcomponent/v/stable)](https://packagist.org/packages/verzatiletom/vcomponent) [![License](https://poser.pugx.org/verzatiletom/vcomponent/license)](https://packagist.org/packages/verzatiletom/vcomponent)
+# Laravel 5+ Vue Component Generator [![Latest Stable Version](https://poser.pugx.org/verzatiletom/vcomponent/v/stable)](https://packagist.org/packages/verzatiletom/vcomponent) [![License](https://poser.pugx.org/verzatiletom/vcomponent/license)](https://packagist.org/packages/verzatiletom/vcomponent) [![StyleCI](https://styleci.io/repos/126265403/shield?branch=master)](https://styleci.io/repos/126265403)
 A simple vue component generator using `make:v-component` artisan command in Laravel. 
 
 ## Installation
